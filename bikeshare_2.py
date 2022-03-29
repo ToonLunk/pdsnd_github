@@ -24,11 +24,11 @@ def list_to_str(a_list):
     a_string = ""
     
     # loop through each item. if it isn't the last, add a comma. if it is, add item, then return the string.
-    for x in a_list:
-        if x != a_list[-1]:
-            a_string += x.title() + ", "
+    for item in a_list:
+        if item != a_list[-1]:
+            a_string += item.title() + ", "
         else:
-            a_string += x.title()
+            a_string += item.title()
     return a_string
 
 def view_data (df):
@@ -37,7 +37,7 @@ def view_data (df):
     """
     df['Row Number'] = np.arange(len(df))
     
-    x = 5 # to print out 5 lines at a time
+    line_count = 5 # to print out 5 lines at a time
     # lines_left holds how many lines are left in the raw data
     lines_left = 0
     #lines_left_message holds what response to print to the user
@@ -46,10 +46,10 @@ def view_data (df):
     print("Now loading raw data...\n")
     user_input = ""
     
-    while user_input.lower() != 'no' and x < len(df):
-        x += 5
-        lines_left = len(df) - x
-        print(df.head(x))
+    while user_input.lower() != 'no' and line_count < len(df):
+        line_count += 5
+        lines_left = len(df) - line_count
+        print(df.head(line_count))
         print('-'*40)
         if(lines_left > 1):
             print(lines_left_message.format('are', lines_left, 's '))
