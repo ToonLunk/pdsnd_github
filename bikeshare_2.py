@@ -1,8 +1,9 @@
 from cmath import nan
 import time
 import pandas as pd
-import numpy as np
+import numpy as np # for quick maths!
 
+# this is a dictionary mapping all of the city data
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
