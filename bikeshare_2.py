@@ -23,11 +23,11 @@ def list_to_str(a_list):
     a_string = ""
     
     # loop through each item. if it isn't the last, add a comma. if it is, add item, then return the string.
-    for x in a_list:
-        if x != a_list[-1]:
-            a_string += x.title() + ", "
+    for item in a_list:
+        if item != a_list[-1]:
+            a_string += item.title() + ", "
         else:
-            a_string += x.title()
+            a_string += item.title()
     return a_string
 
 def view_data (df):
