@@ -36,7 +36,7 @@ def view_data (df):
     """
     df['Row Number'] = np.arange(len(df))
     
-    x = 5 # to print out 5 lines at a time
+    line_count = 5 # to print out 5 lines at a time
     # lines_left holds how many lines are left in the raw data
     lines_left = 0
     #lines_left_message holds what response to print to the user
@@ -45,10 +45,10 @@ def view_data (df):
     print("Now loading raw data...\n")
     user_input = ""
     
-    while user_input.lower() != 'no' and x < len(df):
-        x += 5
-        lines_left = len(df) - x
-        print(df.head(x))
+    while user_input.lower() != 'no' and line_count < len(df):
+        line_count += 5
+        lines_left = len(df) - line_count
+        print(df.head(line_count))
         print('-'*40)
         if(lines_left > 1):
             print(lines_left_message.format('are', lines_left, 's '))
